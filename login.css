@@ -1,0 +1,98 @@
+/* ===========================
+   LOGIN PAGE
+=========================== */
+
+/* Background halaman login */
+body {
+  background-color: #f0f0f0;
+}
+
+/* Pusatkan kotak login di tengah layar */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  padding: 24px 16px;
+}
+
+/* Kotak form login */
+.login-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.login-box h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Setiap baris label + input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #c0392b;
+}
+
+/* Tombol Masuk */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.login-form button:hover {
+  background-color: #a93226;
+}
+
+/* Link daftar akun */
+.daftar-link {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #666;
+}
+
+.daftar-link a {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.daftar-link a:hover {
+  text-decoration: underline;
+}
