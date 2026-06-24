@@ -1,1 +1,0 @@
-# servis-komputer-landing-page
