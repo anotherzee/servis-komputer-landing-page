@@ -1,0 +1,550 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   HEADER & NAVBAR
+=========================== */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 20px;
+  color: #c0392b;
+  font-weight: bold;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+header h1 img {
+  height: 40px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  font-size: 13px;
+  color: #333;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  color: #c0392b;
+  border-bottom-color: #c0392b;
+}
+
+nav a:last-child {
+  background-color: #c0392b;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border-bottom: none;
+}
+
+nav a:last-child:hover {
+  background-color: #a93226;
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero-section {
+  background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero-section h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.hero-section p {
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  font-size: 14px;
+  max-width: 700px;
+}
+
+/* ===========================
+   FORM PENCARIAN
+=========================== */
+#form-cari {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+main section:has(#form-cari) {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+main section:has(#form-cari) h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+#form-cari label {
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+}
+
+#form-cari input[type="search"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#form-cari input[type="search"]:focus {
+  border-color: #c0392b;
+}
+
+#form-cari button {
+  padding: 8px 20px;
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#form-cari button:hover {
+  background-color: #a93226;
+}
+
+/* ===========================
+   SECTION PRODUK
+=========================== */
+#produk {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+#produk > h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #c0392b;
+  display: inline-block;
+}
+
+/* Judul sub-kategori (h3) */
+#produk h3 {
+  font-size: 15px;
+  color: #c0392b;
+  margin: 24px 0 12px;
+  padding-left: 10px;
+  border-left: 4px solid #c0392b;
+}
+
+/* Grid kartu produk */
+#produk {
+  /* wrapper grid dipakai via pseudo container di bawah */
+}
+
+/* Kumpulkan article dalam grid */
+#produk article {
+  display: inline-flex;
+  flex-direction: column;
+  width: 180px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 6px;
+  background-color: #fafafa;
+  vertical-align: top;
+  transition: box-shadow 0.2s;
+}
+
+#produk article:hover {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+/* Gambar produk */
+#produk article img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Nama produk */
+#produk article h4 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* Spesifikasi */
+#produk article p:first-of-type {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Harga */
+#produk article p:last-of-type {
+  font-size: 13px;
+  font-weight: bold;
+  color: #c0392b;
+  margin-top: auto;
+}
+
+/* Tombol Beli Sekarang */
+#produk article .btn-beli {
+  display: block;
+  margin-top: 8px;
+  padding: 7px 10px;
+  background-color: #25d366;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+#produk article .btn-beli:hover {
+  background-color: #1ebe5d;
+}
+
+/* Pesan tidak ditemukan */
+#pesan-tidak-ditemukan {
+  color: #c0392b;
+  font-size: 14px;
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #fdf0ef;
+  border: 1px solid #f5c6c2;
+  border-radius: 4px;
+}
+
+/* ===========================
+   SECTION KONTAK
+=========================== */
+#kontak {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+#kontak h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#kontak p {
+  color: #555;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+#kontak a {
+  display: inline-block;
+  background-color: #25d366;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+#kontak a:hover {
+  background-color: #1ebe5d;
+}
+
+/* ===========================
+   INFO TOKO (JAM & LOKASI)
+=========================== */
+.info-toko {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.jam-buka,
+.lokasi {
+  flex: 1;
+  min-width: 220px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.jam-buka h3,
+.lokasi h3 {
+  font-size: 14px;
+  color: #c0392b;
+  margin-bottom: 10px;
+  padding-left: 0;
+  border-left: none;
+  border-bottom: 2px solid #c0392b;
+  padding-bottom: 6px;
+}
+
+.jam-buka p {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.jam-buka p:last-child {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 6px;
+}
+
+.lokasi p {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.lokasi > a {
+  display: inline-block;
+  font-size: 12px;
+  color: #fff;
+  background-color: #4285f4;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  transition: background-color 0.2s;
+}
+
+.lokasi > a:hover {
+  background-color: #2f6fd4;
+}
+
+.map-embed {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+/* Tabel jam operasional */
+.tabel-jam {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tabel-jam tr {
+  border-bottom: 1px solid #eee;
+}
+
+.tabel-jam tr:last-child {
+  border-bottom: none;
+}
+
+.tabel-jam td {
+  padding: 6px 4px;
+  color: #444;
+}
+
+.tabel-jam td:first-child {
+  width: 80px;
+  font-weight: bold;
+  color: #333;
+}
+
+.tabel-jam td:last-child {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* ===========================
+   BANNER
+=========================== */
+.banner {
+  margin-bottom: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+  padding: 24px 16px;
+  margin-top: 8px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.footer-brand img {
+  height: 36px;
+  width: auto;
+}
+
+.footer-brand span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer-desc {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ===========================
+   RESPONSIVE MOBILE
+=========================== */
+@media (max-width: 768px) {
+  /* Navbar */
+  header {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Produk — 2 kolom di HP */
+  #produk article {
+    width: calc(50% - 14px);
+  }
+
+  /* Info toko stack ke bawah */
+  .info-toko {
+    flex-direction: column;
+  }
+
+  /* Form cari full width */
+  #form-cari {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #form-cari input[type="search"],
+  #form-cari button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Produk — 1 kolom di layar sangat kecil */
+  #produk article {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #produk article img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+}
